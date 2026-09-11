@@ -1,6 +1,6 @@
 RMS Titanic
 ================
-(Your name here)
+Navya Tiwari
 2020-
 
 - [Grading Rubric](#grading-rubric)

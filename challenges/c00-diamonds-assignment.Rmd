@@ -28,7 +28,7 @@ Unlike exercises, **challenges will be graded**. The following rubrics define ho
 <!-- ------------------------- -->
 
 | Category | Needs Improvement | Satisfactory |
-|------------------|-----------------------------|-------------------------|
+|----|----|----|
 | Effort | Some task **q**'s left unattempted | All task **q**'s attempted |
 | Observed | Did not document observations, or observations incorrect | Documented correct observations based on analysis |
 | Supported | Some observations not clearly supported by analysis | All observations clearly supported by analysis (table, graph, etc.) |
@@ -105,15 +105,15 @@ ggplot(
 
 - Based on my understanding of the geom_point documentation, x and y determine the position of each data point. The carat variable made most sense as the so I needed another aesthetic to represent the third variable, cut. Since cut has its own categories, I thought it made sense to experiment with the different aesthetic settings as asked.
 
-  -  Why color was the final choice I landed on:
+  - Why color was the final choice I landed on:
 
-    - It was easily the most distinctive to the eye, and compared to the alternatives, it made the different cut categories easiest to distinguish.
+  - It was easily the most distinctive to the eye, and compared to the alternatives, it made the different cut categories easiest to distinguish.
 
-  -  Alternative approaches to color:
+  - Alternative approaches to color:
 
-    -  alpha was the first variable I tried. It adjusts the transparency of the data points, but because there is so much overlap in the graph, the differences in transparency didn't come across as a very compelling way to represent cut.
+  - alpha was the first variable I tried. It adjusts the transparency of the data points, but because there is so much overlap in the graph, the differences in transparency didn't come across as a very compelling way to represent cut.
 
-    -  I also experimented with fill, shape, size, and stroke, but they similarly did not make the different cut categories as easy to distinguish as color did.
+  - I also experimented with fill, shape, size, and stroke, but they similarly did not make the different cut categories as easy to distinguish as color did.
 
   - I think if we were allowed to use different functions besides aesthetics from geom_point it would be nice to have the 5 cut categories as 5 plots side by side. That way a customer might understand for a given cut quality what is the price range supposed to be like
 

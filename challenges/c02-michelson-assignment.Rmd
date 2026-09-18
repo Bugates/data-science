@@ -1,6 +1,6 @@
 ---
 title: "Michelson Speed-of-light Measurements"
-author: "(Your name here)"
+author: "(Navya Tiwari)"
 date: 2020-
 output: 
   github_document:

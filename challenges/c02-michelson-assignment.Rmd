@@ -35,7 +35,7 @@ define how you will be graded, both on an individual and team basis.
 <!-- ------------------------- -->
 
 | Category | Needs Improvement | Satisfactory |
-|------------------|-----------------------------|-------------------------|
+|----|----|----|
 | Effort | Some task **q**'s left unattempted | All task **q**'s attempted |
 | Observed | Did not document observations, or observations incorrect | Documented correct observations based on analysis |
 | Supported | Some observations not clearly supported by analysis | All observations clearly supported by analysis (table, graph, etc.) |
@@ -322,27 +322,27 @@ df_q2 %>%
     created using the mean and standard deviation of the real
     measurements.
 
-  -  Both also have individual measurements above and below Michelson's
+  - Both also have individual measurements above and below Michelson's
     estimate so neither dataset just forms one tight line around the
     mean.
 
--  Differences
+- Differences
 
-  - Once I started paying more attention to how the points are grouped
-    by date the real data looked less random to me. There are several
-    days where a bunch of measurements are high together and other days
-    where a bunch are lower together.
+- Once I started paying more attention to how the points are grouped by
+  date the real data looked less random to me. There are several days
+  where a bunch of measurements are high together and other days where a
+  bunch are lower together.
 
-  -  The simulated measurements seem more randomly scattered from day to
-    day. Their daily average moves around but I do not see the same kind
-    of repeated clustering that I see in the real measurements.
+- The simulated measurements seem more randomly scattered from day to
+  day. Their daily average moves around but I do not see the same kind
+  of repeated clustering that I see in the real measurements.
 
-  - inititally I thought the difference between the real and simulated
-    plots was mainly about having a few unusual points. But I think the
-    more interesting difference is actually the day to day structure.
-    This makes me wonder if some part of the experimental conditions was
-    changing between days instead of every measurement just being a
-    random variation around one fixed value.
+- inititally I thought the difference between the real and simulated
+  plots was mainly about having a few unusual points. But I think the
+  more interesting difference is actually the day to day structure. This
+  makes me wonder if some part of the experimental conditions was
+  changing between days instead of every measurement just being a random
+  variation around one fixed value.
 
 ### **q5** You have access to a few other variables. Construct a **at least three** visualizations of `VelocityVacuum` against these other factors. Are there other patterns in the data that might help explain the difference between Michelson's estimate and `LIGHTSPEED_VACUUM`?
 
@@ -374,13 +374,13 @@ df_q2 %>%
 
 <!-- -->
 
--  I would not say temperature explains the whole difference because
+- I would not say temperature explains the whole difference because
   there is still a lot of overlap. But it does look like temperature
   could be related to the measured velocity.
 
 <!-- -->
 
--  I also think this is interesting because the 92 km/s correction was
+- I also think this is interesting because the 92 km/s correction was
   applied equally to every measurement even though the measurements were
   taken at different temperatures. That makes me wonder whether using
   one correction for all of the measurements could leave some
@@ -413,14 +413,14 @@ df_q2 %>%
 
 <!-- -->
 
--  This matches what I saw in Q1. It makes me think the important
+- This matches what I saw in Q1. It makes me think the important
   difference might not be between every level of distinctness but more
   specifically between the poor measurements and the fair/good
   measurements.
 
 <!-- -->
 
--  There is still quite a bit of overlap between the groups though so I
+- There is still quite a bit of overlap between the groups though so I
   do not think distinctness alone explains Michelson's error.
 
 Visualization of date
@@ -451,20 +451,18 @@ df_q2 %>%
   )
 ```
 
-- 
-
-  **Observations**
+- **Observations**
 
 - I was mostly looking for a simple trend where the measurements either
   increased or decreased over time. There might be a slight decrease
   overall, but I think the more noticeable thing is how much the daily
   averages move around.
 
--  Some days have several measurements that are all relatively high,
+- Some days have several measurements that are all relatively high,
   while other days have measurements that are mostly lower. That seems
   similar to what I noticed in Q4.
 
--  This makes me think something about the experimental conditions may
+- This makes me think something about the experimental conditions may
   have been changing from day to day. I cannot tell from this plot
   exactly what that factor was, but the measurements do not look like
   completely independent random measurements around one constant value.
@@ -473,10 +471,10 @@ df_q2 %>%
 
 - [1] Michelson, [Experimental Determination of the Velocity of
   Light](https://play.google.com/books/reader?id=343nAAAAMAAJ&hl=en&pg=GBS.PA115)
-  (1880)
+  (1880) 
 - [2] Henrion and Fischhoff, [Assessing Uncertainty in Physical
   Constants](https://www.cmu.edu/epp/people/faculty/research/Fischoff-Henrion-Assessing%20uncertainty%20in%20physical%20constants.pdf)
-  (1986)
+  (1986) 
 - [3] BYU video about a [Fizeau-Foucault
   apparatus](https://www.youtube.com/watch?v=Ik5ORaaeaME), similar to
   what Michelson used.

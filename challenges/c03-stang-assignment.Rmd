@@ -1,6 +1,6 @@
 ---
 title: "Aluminum Data"
-author: "(Your name here)"
+author: "(Navya Tiwari)"
 date: 2020-
 output:
   github_document:
@@ -26,7 +26,7 @@ Unlike exercises, **challenges will be graded**. The following rubrics define ho
 <!-- ------------------------- -->
 
 | Category | Needs Improvement | Satisfactory |
-|------------------|-----------------------------|-------------------------|
+|------------------------|------------------------|------------------------|
 | Effort | Some task **q**'s left unattempted | All task **q**'s attempted |
 | Observed | Did not document observations, or observations incorrect | Documented correct observations based on analysis |
 | Supported | Some observations not clearly supported by analysis | All observations clearly supported by analysis (table, graph, etc.) |
@@ -72,7 +72,13 @@ Note that these data are not tidy! The data in this form are convenient for repo
 ## TASK: Tidy `df_stang`
 df_stang_long <-
   df_stang %>%
-  pivot_longer()
+  pivot_longer(
+    cols = c(E_00, nu_00, E_45, nu_45, E_90, nu_90),
+    names_to = c(".value", "angle"),
+    names_sep = "_"
+  ) %>%
+  mutate(angle = as.integer(angle)) %>%
+  filter(E > 0, nu > 0)
 
 df_stang_long
 ```
@@ -110,20 +116,42 @@ print("Very good!")
 
 ```{r q2-task}
 #
+df_stang_long %>%
+  summarize(
+    min_E = min(E),
+    max_E = max(E),
+    min_nu = min(nu),
+    max_nu = max(nu)
+  )
 
+df_stang_long %>%
+  distinct(alloy)
+
+df_stang_long %>%
+  distinct(angle)
+
+df_stang_long %>%
+  distinct(thick)
+
+df_stang_long %>%
+  group_by(angle) %>%
+  summarize(
+    mean_E = mean(E),
+    mean_nu = mean(nu)
+  )
 ```
 
 **Observations**:
 
 - Is there "one true value" for the material properties of Aluminum?
-  - (Your response here)
+  - Not really. \`E\` goes from 9900 to 10700 and \`nu\` goes from 0.310 to 0.331, so we definitely aren't getting the exact same value every time.
 - How many aluminum alloys are in this dataset? How do you know?
-  - (Your response here)
+  - Just one. The only alloy that shows up is \`al_24st\`.
 - What angles were tested?
-  - (Your response here)
+  - They tested 0, 45, and 90 degrees
 - What thicknesses were tested?
-  - (Your response here)
-- (Write your own question here)
+  - The thicknesses were 0.022, 0.032, 0.064, and 0.081 inches.
+- Does the angle the plate is tested at seem to affect Poisson's ratio?
 
 ## Visualize
 
@@ -132,12 +160,27 @@ print("Very good!")
 ### **q3** Create a visualization to investigate your question from q2 above. Can you find an answer to your question using the dataset? Would you need additional information to answer your question?
 
 ```{r q3-task}
-## TASK: Investigate your question from q1 here
+## TASK: Investigate your question from q1 here4
+
+df_stang_long %>%
+  ggplot(aes(as_factor(angle), nu)) +
+  geom_point(size = 3) +
+  labs(
+    x = "Angle (degrees)",
+    y = "Poisson's ratio (nu)"
+  ) +
+  theme_minimal()
 ```
 
 **Observations**:
 
-- (Address your question from q1 here)
+-  It kind of looks like angle might matter a little. The 45 degree values seem slightly higher overall than the 0 and 90 degree values.
+
+- At the same time, there is a lot of overlap between the three groups, so I definitely wouldn't say that angle changes \`nu\` just from this.
+
+- We also only have around 8 or 9 measurements for each angle, which is not a ton.
+
+- To feel more confident about it, I would want more plates from the same alloy tested at 0, 45, and 90 degrees, ideally with the same thicknesses represented at each angle.
 
 ### **q4** Consider the following statement:
 
@@ -157,9 +200,16 @@ df_stang_long %>%
 **Observations**:
 
 - Does this graph support or contradict the claim above?
-  - (Your response here)
+  -  It kind of goes against the claim. The plates with a thickness of 0.081 seem to have noticeably lower \`E\` values than the thinner plates. That makes it look like thickness and \`E\` might be connected somehow.
 - Is this evidence *conclusive* one way or another?
-  - (Your response here)
+  - No, I wouldn't call it conclusive. There are only a few measurements for each thickness, and they are all from the same alloy.
+
+  - There could also be something else different about the thicker plates besides just their thickness, like how they were made or which batch they came from.
+
+  - To really test whether thickness itself matters, I would want more plates at each thickness from the same alloy and batch, made and tested in the same way.
+
+    ```         
+    ```
 
 # References
 

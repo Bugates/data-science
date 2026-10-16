@@ -26,7 +26,7 @@ Unlike exercises, **challenges will be graded**. The following rubrics define ho
 <!-- ------------------------- -->
 
 | Category | Needs Improvement | Satisfactory |
-|------------------------|------------------------|------------------------|
+|----|----|----|
 | Effort | Some task **q**'s left unattempted | All task **q**'s attempted |
 | Observed | Did not document observations, or observations incorrect | Documented correct observations based on analysis |
 | Supported | Some observations not clearly supported by analysis | All observations clearly supported by analysis (table, graph, etc.) |
@@ -174,7 +174,7 @@ df_stang_long %>%
 
 **Observations**:
 
--  It kind of looks like angle might matter a little. The 45 degree values seem slightly higher overall than the 0 and 90 degree values.
+- It kind of looks like angle might matter a little. The 45 degree values seem slightly higher overall than the 0 and 90 degree values.
 
 - At the same time, there is a lot of overlap between the three groups, so I definitely wouldn't say that angle changes \`nu\` just from this.
 
@@ -200,7 +200,7 @@ df_stang_long %>%
 **Observations**:
 
 - Does this graph support or contradict the claim above?
-  -  It kind of goes against the claim. The plates with a thickness of 0.081 seem to have noticeably lower \`E\` values than the thinner plates. That makes it look like thickness and \`E\` might be connected somehow.
+  - It kind of goes against the claim. The plates with a thickness of 0.081 seem to have noticeably lower \`E\` values than the thinner plates. That makes it look like thickness and \`E\` might be connected somehow.
 - Is this evidence *conclusive* one way or another?
   - No, I wouldn't call it conclusive. There are only a few measurements for each thickness, and they are all from the same alloy.
 
